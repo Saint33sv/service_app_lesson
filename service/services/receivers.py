@@ -6,5 +6,6 @@ from django.dispatch import receiver
 
 @receiver(post_delete, sender=None)
 def delete_cache_total_sum(*args, **kwargs):
+    """удаление данных кэша"""
     cache.delete(settings.PRICE_CACHE_NAME)
      
